@@ -4,5 +4,5 @@ export default {
   typescript: {
     shim: false,
   },
-  css: ["@/styles/main.css"],
+  css: ["@/index.css"],
 };

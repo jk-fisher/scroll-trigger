@@ -13,4 +13,6 @@
 <script setup>
 const route = useRoute();
 </script>
-<style scoped></style>
+<style scoped>
+/* @import "./index.css"; */
+</style>

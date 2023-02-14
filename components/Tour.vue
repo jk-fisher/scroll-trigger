@@ -1,12 +1,12 @@
 <template>
-  <div class="overlay trigger w-screen py-96 bg-amber-50 z-10 relative">
-    <p class="slide-l w-6/12">
+  <div class="trigger w-screen py-96 bg-amber-50 z-10 relative">
+    <p class="slide-l w-6/12 ml-10">
       {{ overlayText }}
     </p>
   </div>
 
   <div class="w-screen h-full flex flex-row z-0">
-    <div class="drop w-6/12 shrink">
+    <div class="drop w-6/12 shrink grow">
       <nuxt-img class="h-full max-w-full" src="/diamondball-620x5501.jpg" />
     </div>
 
@@ -27,12 +27,13 @@ const scrollAnimation = () => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".trigger",
-      markers: {
-        startColor: "green",
-        endColor: "green",
-      },
-      start: "top 60%",
-      end: "bottom",
+      // markers: {
+      //   startColor: "green",
+      //   endColor: "green",
+      // },
+      markers: true,
+      start: "top 80%",
+      end: "bottom 20%",
       scrub: true,
     },
   });
@@ -44,13 +45,8 @@ const revealAnimation = () => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".trigger",
-      markers: {
-        startColor: "purple",
-        endColor: "purple",
-        inquent: 100,
-      },
-      start: "top 5%",
       end: "bottom",
+      start: "top 5%",
       scrub: true,
     },
   });
@@ -67,8 +63,8 @@ onMounted(() => {
 });
 </script>
 <style scoped>
-.overlay,
+.trigger,
 .drop {
-  height: 885px;
+  min-height: 665px;
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="bg-orange-50">
     <HeroBanner />
     <Childhood :childhoodText="p" />
     <Tour :overlayText="overlayText" :tourText="text" />
-    <!-- <Childhood :childhoodText="p" /> -->
+    <Songs :songs="songs" />
   </div>
 </template>
 
@@ -33,5 +33,27 @@ const overlayText = ref(
 const text = ref(
   `with over 81 million facebook fans, 57 million twitter & 35 million instagram followers, rihanna is putting her influence to good use via philanthropic efforts. chief among these is her own clara lionel foundation. established in 2012 and named after rihanna’s beloved grandparents clara & lionel braithwaite, the foundation works to improve the quality of life for communities globally in the areas of health, education, arts & culture. in december, rihanna held the 2nd annual diamond ball to benefit the clf.`
 );
+const songs = ref([
+  {
+    song: "talk that talk",
+    year: 2014,
+  },
+  {
+    song: "unapologetic",
+    year: 2015,
+  },
+  {
+    song: "fourifveseconds",
+    year: 2016,
+  },
+  {
+    song: "sledgehammer",
+    year: 2017,
+  },
+  {
+    song: "lift me up",
+    year: 2018,
+  },
+]);
 </script>
 <style scoped></style>

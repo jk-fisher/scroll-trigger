@@ -1,6 +1,6 @@
 <template>
   <div
-    class="container-trigger w-screen h-full flex basis-1/3 flex-col lg:flex-row bg-stone-100 -mb-20"
+    class="container-trigger w-screen h-full flex basis-1/3 flex-col lg:flex-row bg-stone-100"
   >
     <div class="img-trigger shrink-0">
       <nuxt-img class="h-screen md:w-auto" src="/RihannaBabyPic.jpg" />
@@ -68,4 +68,8 @@ onMounted(() => {
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.container-trigger {
+  margin-bottom: -20%;
+}
+</style>
