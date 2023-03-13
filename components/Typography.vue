@@ -10,7 +10,7 @@
   </div>
 </template>
 <script setup>
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ref } from "vue";
 gsap.registerPlugin(ScrollTrigger);

@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { onBeforeMount, onMounted } from "vue";
 import { Flip } from "gsap/Flip";
 

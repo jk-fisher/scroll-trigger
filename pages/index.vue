@@ -25,7 +25,7 @@
 
 <script setup>
 import { ref } from "vue";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { Flip } from "gsap/Flip";
 import HeaderPullUp from "../components/HeaderPullUp.vue";
 

@@ -35,7 +35,7 @@
   </div>
 </template>
 <script setup>
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { onBeforeUpdate, onUpdated } from "vue";
 import { Flip } from "gsap/Flip";
 gsap.registerPlugin(Flip);
