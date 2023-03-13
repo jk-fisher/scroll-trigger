@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center items-center flex-col p-20">
+  <div class="flex justify-center items-center flex-col p-20 bg-stone-700">
     <input
       type="text"
       v-model="newSong"
@@ -81,6 +81,7 @@ watch(selectedYear, (newYear) => {
   font-family: "Marcellus", serif;
   font-size: 26px;
   width: 700px;
+  color: beige;
 }
 .input {
   margin: 20px auto;

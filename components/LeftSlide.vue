@@ -1,17 +1,20 @@
 <template>
   <div class="trigger w-screen py-96 bg-amber-50 z-10 relative">
-    <p class="slide-l w-6/12 ml-10">
+    <p class="slide-l w-6/12 ml-10 text-2xl">
       {{ overlayText }}
     </p>
   </div>
 
   <div class="w-screen h-full flex flex-row z-0">
     <div class="drop w-6/12 shrink grow">
-      <nuxt-img class="h-full max-w-full" src="/diamondball-620x5501.jpg" />
+      <nuxt-img
+        class="h-full max-w-full object-cover"
+        src="/rene-muller-c-YKqs76ot8-unsplash (1).jpg"
+      />
     </div>
 
     <div class="slide flex justify-center flex-col w-6/12 grow">
-      <p v-html="tourText" class="slide-up w-9/12 m-auto"></p>
+      <p v-html="tourText" class="slide-up w-9/12 m-auto text-xl"></p>
     </div>
   </div>
 </template>
@@ -27,11 +30,6 @@ const scrollAnimation = () => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".trigger",
-      // markers: {
-      //   startColor: "green",
-      //   endColor: "green",
-      // },
-      markers: true,
       start: "top 80%",
       end: "bottom 20%",
       scrub: true,
@@ -65,6 +63,7 @@ onMounted(() => {
 <style scoped>
 .trigger,
 .drop {
-  min-height: 665px;
+  min-height: 560px;
+  max-height: 560px;
 }
 </style>

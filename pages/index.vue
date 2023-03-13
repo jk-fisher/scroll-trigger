@@ -1,15 +1,39 @@
 <template>
   <div class="bg-orange-50">
+    <div class="absolute bottom-0 right-0 m-0 p-4">
+      <NuxtLink
+        data-flip-id="page"
+        class="page block w-12 h-12 bg-yellow-600 full"
+        to="/social"
+      >
+        <div class="container">
+          <svg class="fill-transparent stroke-white" viewBox="0 0 100 100">
+            <polygon points="50 15, 100 100, 0 100" />
+          </svg>
+        </div>
+      </NuxtLink>
+    </div>
     <HeroBanner />
-    <Childhood :childhoodText="p" />
-    <Tour :overlayText="overlayText" :tourText="text" />
+    <Slide :text="p" />
+    <LeftSlide :overlayText="overlayText" :tourText="text" />
     <Songs :songs="songs" />
+    <Typography :content="content" />
+    <Header :headerContent="header" />
+    <HeaderPullUp :headerContent="header" />
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import gsap from "gsap";
+import { Flip } from "gsap/Flip";
+import HeaderPullUp from "../components/HeaderPullUp.vue";
 
+gsap.registerPlugin(Flip);
+
+let prevPageState;
+const route = useRoute();
+const header = ref("The Experience");
 const p = ref(`<p>
           it’s hard to believe that rihanna is only 34 years old. yet within the
           10 years since the start of her musical career, she’s become the
@@ -55,5 +79,40 @@ const songs = ref([
     year: 2018,
   },
 ]);
+const content = ref(
+  "As human beings, we often find ourselves feeling out of place in the world around us. We sense that something is not quite right, that the reality we experience is not necessarily the truth. "
+);
+
+//page Transition
+//transition away from home
+onBeforeMount(() => {
+  const elemToFlip = document.querySelector("[data-flip-id=page]");
+  if (elemToFlip) {
+    prevPageState = Flip.getState(elemToFlip, { props: "backgroundColor" });
+  }
+});
+//home page mounted
+onMounted(() => {
+  const elemToFlip = document.querySelector("[data-flip-id=page]");
+  if (elemToFlip && prevPageState) {
+    Flip.from(prevPageState, {
+      targets: elemToFlip,
+      duration: 0.8,
+      absolute: true,
+      absoluteOnLeave: true,
+    });
+  }
+  prevPageState = null;
+});
 </script>
-<style scoped></style>
+<style scoped>
+.container {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  margin: auto;
+}
+.container svg {
+  stroke-width: 3px;
+}
+</style>
